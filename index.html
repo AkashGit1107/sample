@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash's Business Card</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy/Xc9MQ5eA9cpF/EUJ6P4U/1ENzQGMmN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Hotel Menu</title>
 </head>
 <body>
-<div class="container">
-    <div class="business-card">
-        <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="profile-picture">
-        <div class="name">Akash</div>
-        <div class="profession">Full Stack Developer </div>
-        <div class="company"></div>
 
-        <div class="contact-icons">
-            <a href="tel:+917358389139"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-              </svg></a>
-            <a href="mailto:msakash1107@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
-                <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914"/>
-              </svg></a>
-            <a href="https://www.instagram.com/kick_akash_7?igsh=YTQwZjQ0NmI0OA==" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-</svg></a>
-        </div>
+  <header>
+    <h1>South indian Hotel</h1>
+  </header>
+  <div class="address">
+    <p>Address: No. 11 velachery main road, velachery, Chennai - 600042</p>
+    <p>Phone Number: <a href="tel:+917358389139"><img src="assets/img/phone-call.png" alt="Phone Icon">+91 73583 89139</a></p>
+  </div>
 
-        <div class="services">
-            <h3 style="font-size: 24px; font-weight: 600;">Services</h3>
-            <img src="https://www.sarasolutions.in/assets/admin/blog/5d1f342ff2557.png" alt="Web Development">
-            <div class="service-title">Web Development</div>
-            <div class="service-description">We offer top-notch quality websites</div>
-        </div>
+  <div class="menu">
+    <div class="menu-heading">South Indian Specials</div>
+    <div class="menu-item">
+      <img src="assets/img/mini-tiffin.jpg" alt="Mini Tiffin">
+      <p>Mini Tiffin</p>
     </div>
-</div>
+    <div class="menu-item">
+      <img src="assets/img/mini-meals.jpg" alt="Mini Meals">
+      <p>Mini Meals</p>
+    </div>
+    <div class="menu-item">
+      <img src="assets/img/dosa.jpg" alt="Dosa">
+      <p>Dosa</p>
+    </div>
+    <div class="menu-heading" style="padding-top: 50px;">South Indian Meals</div>
+    <div class="menu-item">
+      <img src="assets/img/sambar-rice.jpg" alt="Sambhar Rice">
+      <p>Sambhar Rice</p>
+    </div>
+    <div class="menu-item">
+      <img src="assets/img/tomato-rice.jpg" alt="Tomato Rice">
+      <p>Tomato Rice</p>
+    </div>
+    <div class="menu-item">
+      <img src="assets/img/veg-biryani.jpg" alt="Veg Biriyani">
+      <p>Veg Biriyani</p>
+    </div>
+  </div>
+
+  <div class="cta-buttons">
+    <a href="tel:+919897873615" class="cta-button">
+      <img src="assets/img/phone-call.png" alt="Phone Icon"> Call to book order
+    </a>
+    <a href="https://wa.me/919962409021" class="cta-button">
+      <img src="assets/img/whatsapp.png" alt="Whatsapp Icon"> Whatsapp to book order
+    </a>
+  </div>
 
 </body>
 </html>
