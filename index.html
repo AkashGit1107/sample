@@ -3,56 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Hotel Menu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <title>ToDo List</title>
 </head>
+<style>
+  .strike-through {
+    text-decoration: line-through;
+  }
+</style>
 <body>
 
-  <header>
-    <h1>South indian Hotel</h1>
-  </header>
-  <div class="address">
-    <p>Address: No. 11 velachery main road, velachery, Chennai - 600042</p>
-    <p>Phone Number: <a href="tel:+917358389139"><img src="assets/img/phone-call.png" alt="Phone Icon">+91 73583 89139</a></p>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">To-Do List</h2>
+
+    <ul class="list-group" id="todoList">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="task1">
+          <label class="form-check-label" for="task1">Checkbox Task</label>
+        </div>
+        <button class="btn btn-danger btn-sm delete-btn">Remove</button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="task2">
+          <label class="form-check-label" for="task2">Project work</label>
+        </div>
+        <button class="btn btn-danger btn-sm delete-btn">Remove</button>
+      </li>
+    </ul>
+    <div class="input-group mt-3">
+      <input type="text" class="form-control" placeholder="Type in your New Task" id="newTaskInput">
+      <button class="btn btn-primary" id="addTaskBtn">Add Task</button>
+    </div>
+    <h2 class="text-center my-4">Removed Task</h2>
+    <ul class="list-group" id="removedlist"></ul>
   </div>
 
-  <div class="menu">
-    <div class="menu-heading">South Indian Specials</div>
-    <div class="menu-item">
-      <img src="assets/img/mini-tiffin.jpg" alt="Mini Tiffin">
-      <p>Mini Tiffin</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/img/mini-meals.jpg" alt="Mini Meals">
-      <p>Mini Meals</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/img/dosa.jpg" alt="Dosa">
-      <p>Dosa</p>
-    </div>
-    <div class="menu-heading" style="padding-top: 50px;">South Indian Meals</div>
-    <div class="menu-item">
-      <img src="assets/img/sambar-rice.jpg" alt="Sambhar Rice">
-      <p>Sambhar Rice</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/img/tomato-rice.jpg" alt="Tomato Rice">
-      <p>Tomato Rice</p>
-    </div>
-    <div class="menu-item">
-      <img src="assets/img/veg-biryani.jpg" alt="Veg Biriyani">
-      <p>Veg Biriyani</p>
-    </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('addTaskBtn').addEventListener('click', function() {
+      var taskInput = document.getElementById('newTaskInput').value;
+      var date = new Date().toLocaleString();
 
-  <div class="cta-buttons">
-    <a href="tel:+919897873615" class="cta-button">
-      <img src="assets/img/phone-call.png" alt="Phone Icon"> Call to book order
-    </a>
-    <a href="https://wa.me/919962409021" class="cta-button">
-      <img src="assets/img/whatsapp.png" alt="Whatsapp Icon"> Whatsapp to book order
-    </a>
-  </div>
+      if (taskInput.trim() !== '') {
+        var todoList = document.getElementById('todoList');
+        var newTask = document.createElement('li');
+        newTask.className = 'list-group-item d-flex justify-content-between align-items-center';
+        newTask.innerHTML = `
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">${taskInput}&ensp;&ensp;${date}</label>
+          </div>
+          <button class="btn btn-danger btn-sm delete-btn">Remove</button>
+        `;
+        todoList.appendChild(newTask);
+        document.getElementById('newTaskInput').value = '';
+      }
+    });
 
+    document.addEventListener('click',function(e) {
+      if(e.target.classList.contains('delete-btn')) {
+        var taskitem=e.target.parentElement;
+        if(taskitem.parentElement.id==='todoList'){
+          removedlist.appendChild(taskitem);
+        }else if(taskitem.parentElement.id==='removedlist'){
+          if (confirm("Are you sure you want to remove permanently?")) {
+            taskitem.remove();
+          }
+        }
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (e.target.type === 'checkbox') {
+        var label = e.target.nextElementSibling;
+        label.classList.toggle('strike-through','fade');
+        
+      }  
+    });
+
+    
+  </script>
 </body>
 </html>
